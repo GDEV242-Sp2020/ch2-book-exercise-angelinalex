@@ -6,37 +6,44 @@
  * @author (Angelina A Joy)
  * @version (2/06/2020)
  */
- class Book
+ public class Book
 {
      // The fields.
     private String author;
     private String title;
     private int pages;
-    private String refNumber= "";
+    private String refNumber;
     private int borrowed; 
     private boolean courseText;
-   
+ 
 
     /**
      * Set the author and title fields when this object
      * is constructed.
      */
-    public Book(String bookAuthor, String bookTitle, String refNumber, boolean courseText)
+    public Book(String bookAuthor, String bookTitle, int numPages, boolean immutable)
     {
-        author = bookAuthor;
-        title = bookTitle;
-        
-        courseText = false;
-        
-        
-        
+    author= bookAuthor;
+    title = bookTitle; 
+    pages = numPages;
+    refNumber = "";     
+       
     }
     
+    // default constructor 
+    public Book(int borrow)
+    {
+     author = "";
+     title = ""; 
+     pages = 0;
+     courseText = false; 
+     borrowed = borrow; 
+    }
     // getPages method returns number of pages
     // return pages field
     
     public int getPages()
-    { 
+    {   
         return pages;
     }
     
@@ -74,10 +81,17 @@
         return borrowed;
     } 
     
+    
+    public int borrow() 
+    {
+        return borrowed;
+    }
+    
     public void setBorrowed()
     { 
-       borrowed+=1; 
- 
+      borrowed+=1;  
+     
+  
     }
     
     public void printAuthor()
