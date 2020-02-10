@@ -22,24 +22,30 @@
      * is constructed.
      * Includes author, title, and pages for the constructor required for 2.85
      */
-    public Book(String bookAuthor, String bookTitle, int numPages, boolean courseText)
+    public Book(String bookAuthor, String bookTitle, int numPages, boolean immutable)
     {
     author= bookAuthor;
     title = bookTitle; 
     pages = numPages;
-    refNumber = "";     // initilize refNumber in constructor to satisfy 2.88 
+    refNumber = ""; 
+    courseText = immutable; //satisfies requirements for 2.92 
+    // initilize refNumber in constructor to satisfy 2.88 
+    
        
     }
     
-    // default constructor 
+    // default constructor gives initial values
     public Book(int borrow)
     {
      author = "";
      title = ""; 
      pages = 0;
-     courseText = false; 
      borrowed = borrow; 
+     courseText = false;
     }
+    
+    
+    
     // getPages method returns number of pages Required for 2.85
     // return pages field
     
@@ -107,6 +113,11 @@
         
     }
     
+    /// 2.92 accessor method for the isCourseText field returns courseText
+    public boolean isCourseText()
+    {
+        return courseText;
+    }
 
     /// satisfies requiremnet for 2.87 printDetails method prints title, author and pages. 
     /// details modified for 2.88 to print reference number, 
@@ -124,11 +135,6 @@
            
           System.out.print(" Times borrowed: " + borrowed);
        
-    }
-    /// 2.92 accessor method for the isCourseText field 
-    public boolean isCourseText()
-    {
-        return courseText;
     }
     
 }
