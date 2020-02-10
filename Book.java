@@ -22,6 +22,8 @@
      * is constructed.
      * Includes author, title, and pages for the constructor required for 2.85
      */
+    
+    // This is the constructor for the book class 
     public Book(String bookAuthor, String bookTitle, int numPages, boolean immutable)
     {
     author= bookAuthor;
@@ -34,7 +36,7 @@
        
     }
     
-    // default constructor gives initial values
+    // default constructor gives initial values 
     public Book(int borrow)
     {
      author = "";
